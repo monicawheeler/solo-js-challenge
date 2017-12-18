@@ -6,6 +6,7 @@ function divManager() {
   // Event Listeners
   $('#generate-btn').on('click', divCreator);
   $('#content-container').on('click', '.swap-button', colorSwapper);
+  $('#content-container').on('click', '.delete-button', divDeleter);
 
   function divCreator () {
     // Append div to DOM when generate is clicked
@@ -22,4 +23,8 @@ function divManager() {
     $(this).parents('.block').toggleClass('yellow');
   }
 
+  function divDeleter() {
+    // Deletes div container on button click
+    $(this).parents('.block').remove();
+  }
 }
