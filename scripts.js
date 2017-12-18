@@ -9,9 +9,9 @@ function divManager() {
   function divCreator () {
     // Append div to DOM when generate is clicked
     $('#content-container').append('<div class="block"></div>');
-    // Create <p> when div count
-    var count = 0;
+    // Create <p>
     $('.block').html('<p>' + count + '</p>');
+    // Create buttons for swap and delete
     $('.block').html('<button class="swap-button">Swap</button><button class="delete-button">Delete</button>');
   }
 
