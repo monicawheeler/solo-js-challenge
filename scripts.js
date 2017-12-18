@@ -11,11 +11,16 @@ function divManager() {
   function divCreator () {
     // Append div to DOM when generate is clicked
     $('#content-container').append('<div class="block"></div>');
-    // Create <p> tag
-    var count = 0;
-    $('.block').html('<p>' + count + '</p>');
     // Create buttons for swap and delete
-    $('.block').html('<button class="swap-button">Swap</button><button class="delete-button">Delete</button>');
+    // Create p tag to grab for count
+    $('.block').html('<p class="number-value"></p><button class="swap-button">Swap</button><button class="delete-button">Delete</button>');
+    clickCounter();
+  }
+
+  function clickCounter() {
+    var count = $('.block').length;
+    $('.number-value').text(count);
+    console.log(count);
   }
 
   function colorSwapper() {
