@@ -3,12 +3,15 @@ console.log('scripts.js loaded');
 $(document).ready(divManager);
 
 function divManager() {
-// Event Listeners
-$('#generate-btn').on('click', divCreator);
+  // Event Listeners
+  $('#generate-btn').on('click', divCreator);
 
-function divCreator () {
-  console.log('divCreator ran');
-  $('#content-container').append('<div></div>');
-}
+  function divCreator () {
+    // Append div to DOM when generate is clicked
+    $('#content-container').append('<div class="block"></div>');
+    // Create <p> when div count
+    var count = 0;
+    $('.block').html('<p>' + count + '</p>');
+  }
 
 }
