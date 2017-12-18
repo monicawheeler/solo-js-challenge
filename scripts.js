@@ -2,6 +2,7 @@ console.log('scripts.js loaded');
 
 $(document).ready(divManager);
 
+var count = 1;
 function divManager() {
   // Event Listeners
   $('#generate-btn').on('click', divCreator);
@@ -17,10 +18,11 @@ function divManager() {
     clickCounter();
   }
 
+
+  // Could not figure out his portion of the project
   function clickCounter() {
-    var count = $('.block').length;
     $('.number-value').text(count);
-    console.log(count);
+    count++;
   }
 
   function colorSwapper() {
