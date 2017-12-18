@@ -12,6 +12,7 @@ function divManager() {
     // Create <p> when div count
     var count = 0;
     $('.block').html('<p>' + count + '</p>');
+    $('.block').html('<button class="swap-button">Swap</button><button class="delete-button">Delete</button>');
   }
 
 }
