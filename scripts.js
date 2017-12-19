@@ -2,7 +2,7 @@ console.log('scripts.js loaded');
 
 $(document).ready(divManager);
 
-var count = 1;
+var count = 0;
 function divManager() {
   // Event Listeners
   $('#generate-btn').on('click', divCreator);
@@ -10,21 +10,26 @@ function divManager() {
   $('#content-container').on('click', '.delete-button', divDeleter);
 
   function divCreator () {
-    // Append div to DOM when generate is clicked
-    $('#content-container').append('<div class="block"></div>');
-    // Create buttons for swap and delete
-    // Create p tag to grab for count
-    $('.block').html('<p class="number-value"></p><button class="swap-button">Swap</button><button class="delete-button">Delete</button>');
-    clickCounter();
-  }
-
-
-  // Could not figure out his portion of the project
-  function clickCounter() {
-    $('.number-value').text(count);
     count++;
-  }
+    //console.log(count);
+    
+    // Stringing the append's increased the counts for each of the divs
 
+    // $('.block').append('<p class="number-value">' + count + '</p><button class="swap-button">Swap</button><button class="delete-button">Delete</button>');
+
+    // // Append div to DOM when generate is clicked
+    // // Create buttons for swap and delete
+    // // Create p tag to grab for count
+
+    $block = $('<div class="block">');  
+    $block.append('<p class="number-value">' + count + '</p>');
+    $block.append('<button class="swap-button">Swap</button>');
+    $block.append('<button class="delete-button">Delete</button>');
+
+    $('#content-container').append($block);
+    
+  }
+  
   function colorSwapper() {
     // Swap color with toggleClass on button click
     $(this).parents('.block').toggleClass('yellow');
@@ -35,3 +40,5 @@ function divManager() {
     $(this).parents('.block').remove();
   }
 }
+
+
